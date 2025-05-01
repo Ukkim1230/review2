@@ -13,8 +13,8 @@ String username = "root";
 String pwd = "r1r2r3";
 Connection con = DriverManager.getConnection(url,username,pwd);
 Statement stmt = con.createStatement();
-String sql = "DELETE FORM USER_INFO";
-sql+="WHERE UI_ID = '" + uiId + "'";
+String sql = "DELETE FROM USER_INFO";
+sql+=" WHERE UI_ID = '" + uiId + "'";
 int result = stmt.executeUpdate(sql);
 if(result==1){
 %>

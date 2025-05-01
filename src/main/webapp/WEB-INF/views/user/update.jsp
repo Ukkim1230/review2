@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form method ="POST" action="/view/user/update-ok">
+<form id="frm" method ="POST" action="/views/user/update-ok">
 	<input type="hidden" name="uiNum" value="<%=session.getAttribute("uiNum") %>">
 	<input type="text" name="uiId" value="<%=session.getAttribute("uiId") %>">
 	<input type="text" name="uiName" value="<%=session.getAttribute("uiName") %>">

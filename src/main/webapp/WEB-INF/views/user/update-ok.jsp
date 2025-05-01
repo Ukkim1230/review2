@@ -17,10 +17,10 @@ String username = "root";
 String pwd = "r1r2r3";
 Connection con = DriverManager.getConnection(url,username,pwd);
 Statement stmt = con.createStatement();
-String sql = "UPDATE USER_INFO";
-sql += " SET UI_ID = '" + uiId + "',";
-sql += "UI_NAME + '" + uiName + "',";
-sql += "UI_DESC + '" + uiDesc + "',";
+String sql = "UPDATE USER_INFO ";
+sql += "SET UI_ID = '" + uiId + "', ";
+sql += "UI_NAME = '" + uiName + "', ";
+sql += "UI_DESC = '" + uiDesc + "' ";
 sql += "WHERE UI_ID = '" + uiId + "'";
 int result = stmt.executeUpdate(sql);
 if(result==1){

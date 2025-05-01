@@ -40,7 +40,7 @@ try {
 %>
 <script>
     alert('<%=name%>님 반갑습니다.');
-    location.href='/views/user/join';
+    location.href='/views/user/update';
 </script>
 <%
     } else {
