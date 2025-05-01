@@ -26,12 +26,17 @@ try {
     String pwd = "r1r2r3";
     con = DriverManager.getConnection(url, username, pwd);
     stmt = con.createStatement();
-    String sql = "SELECT UI_ID FROM USER_INFO WHERE UI_ID='" + uiId + "'";
-    sql += " AND UI_PWD = '" + uiPwd + "'";
+    String sql = "SELECT UI_ID, UI_NUM, UI_NAME, UI_DESC FROM USER_INFO WHERE UI_ID='" + uiId + "' AND UI_PWD='" + uiPwd + "'";
     rs = stmt.executeQuery(sql);
 
     if(rs.next()){
-        String name = rs.getString("UI_ID"); // UI_NAME 아니라 UI_ID만 조회 중
+    	String name = rs.getString("UI_NAME");
+    	int uiNum = rs.getInt("UI_NUM");
+    	uiDesc = rs.getString("UI_DESC");
+        session.setAttribute("uiId", uiId);
+        session.setAttribute("uiNum", uiNum);
+        session.setAttribute("uiName", uiName);
+        session.setAttribute("uiDesc", uiDesc);
 %>
 <script>
     alert('<%=name%>님 반갑습니다.');
